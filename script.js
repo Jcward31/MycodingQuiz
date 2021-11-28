@@ -6,8 +6,10 @@ var submitBt = document.getElementById("submitButton");
 var startUpPage =document.getElementById("introPage");
 var finBut = document.querySelector("#finishedbtn");
 var hScorebtn = document.querySelector("#heading1");
-var time = 600;
+var time = 200;
 var timeTaken = 0;
+var score = 0;
+
 
 /* the correct answers*/ 
 var q2Correct = document.querySelector("#q2");
@@ -48,6 +50,15 @@ var q9Page = document.getElementById("question9");
 var q10Page = document.getElementById("question10");
 var lastPage = document.getElementById("finished");
 var scoreEl = document.getElementById("totalScore");
+var highScoresPage = document.getElementById("Highscores");
+
+
+/*top five high scores*/ 
+var p1 = document.getElementById("1score");
+var p2 = document.getElementById("2score");
+var p3 = document.getElementById("3score");
+var p4 = document.getElementById("4score");
+var p5 = document.getElementById("5score");
 
 
 
@@ -267,8 +278,6 @@ q10But.forEach((btn) => {
 /*Endgame function*/
 
 function endGame() {
-    clearInterval(interval);
-    timeDisplay.innerHTML = 0;
     q1Page.style.display = "none";
     q2Page.style.display = "none";
     q3Page.style.display = "none";
@@ -280,8 +289,35 @@ function endGame() {
     q9Page.style.display = "none";
     q10Page.style.display = "none";
     lastPage.style.display = "block";
+    countdownEl.innerHTML =0;
     return;
 }
 
+/*saving your initials*/ 
 
+function saveScores(){
+    var initial = document.getElementById("yourInitials");
 
+    if (initial==""){
+        alert ("You need to initial");
+    }else {
+        return;
+    }
+    }
+
+    console.log(yourInitials);
+
+/*saving your highscores*/
+
+  var test = localStorage.getItem("highScore");
+
+  console.log(test);
+
+  var highScore = JSON.parse(test);
+
+  console.log(highScore);
+  
+  const player = {
+      Initials: yourInitials,
+      Score: score
+  };
