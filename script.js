@@ -6,6 +6,8 @@ var submitEl = document.getElementById("submitButton");
 var startUpPage =document.getElementById("introPage");
 var finBut = document.querySelector("#finishedbtn");
 var hScorebtn = document.querySelector("#heading1");
+var time = 600;
+var timeTaken = 0;
 
 /* the correct answers*/ 
 var q2Correct = document.querySelector("#q2");
@@ -59,13 +61,7 @@ setInterval(updateCountdown, 1000);
 
 
 function updateCountdown() {
-const minutes = Math.floor(time / 60);
- let seconds = time % 60;
- countdownEl.innerHTML = `${minutes}:${seconds}`;
-time--;
-
-
- seconds = seconds <10 ? '0' + seconds : seconds;
+ countdownEl.innerHTML = time--; 
 
  if(time < 0) {
      alert("Time is up!");
