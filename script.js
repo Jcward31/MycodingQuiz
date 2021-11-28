@@ -2,7 +2,7 @@
 
 var countdownEl = document.querySelector("#countdown");
 var startBt = document.querySelector("#Begin");
-var submitEl = document.getElementById("submitButton");
+var submitBt = document.getElementById("submitButton");
 var startUpPage =document.getElementById("introPage");
 var finBut = document.querySelector("#finishedbtn");
 var hScorebtn = document.querySelector("#heading1");
@@ -51,7 +51,7 @@ var scoreEl = document.getElementById("totalScore");
 
 
 
-/*the js for my timer */ 
+/*the j.s for my timer */ 
 
 startBt.addEventListener("click", function(event) {
     startUpPage.style.display = "none";
@@ -70,4 +70,218 @@ function updateCountdown() {
 };
 
 /*END OF TIMER*/
-/*the return of all my answers*/ 
+
+
+/*quiz pages*/ 
+q1But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q1Page.style.display = "none";
+    q2Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q1") {
+        score= score + 10;
+        console.log(score);
+    
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q2But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q2Page.style.display = "none";
+    q3Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q2") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q3But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q3Page.style.display = "none";
+    q4Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q3") {
+        score= score + 10;
+        console.log(score);
+       
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q4But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q4Page.style.display = "none";
+    q5Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q4") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q5But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q5Page.style.display = "none";
+    q6Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q5") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q6But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q6Page.style.display = "none";
+    q7Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q6") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q7But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q7Page.style.display = "none";
+    q8Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q7") {
+        score= score + 10;
+        console.log(score);
+      
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q8But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q8Page.style.display = "none";
+    q9Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q8") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q9But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    q9Page.style.display = "none";
+    q10Page.style.display = "block";
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q9") {
+        score= score + 10;
+        console.log(score);
+       
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+});
+});
+
+q10But.forEach((btn) => {
+    btn.addEventListener ("click", function(event) {
+    endGame ();
+    var choice = event.target.id;
+    console.log(choice);
+
+    if(choice == "q10") {
+        score= score + 10;
+        console.log(score);
+        
+    } else {
+         time = time - 10;
+        console.log(time);
+        alert("I'm sorry that was Incorrect");
+    }
+
+    scoreEl.innerHTML = score;
+});
+});
+
+/*Endgame function*/
+
+function endGame() {
+    clearInterval(interval);
+    timeDisplay.innerHTML = 0;
+    q1Page.style.display = "none";
+    q2Page.style.display = "none";
+    q3Page.style.display = "none";
+    q4Page.style.display = "none";
+    q5Page.style.display = "none";
+    q6Page.style.display = "none";
+    q7Page.style.display = "none";
+    q8Page.style.display = "none";
+    q9Page.style.display = "none";
+    q10Page.style.display = "none";
+    lastPage.style.display = "block";
+    return;
+}
+
+
+
