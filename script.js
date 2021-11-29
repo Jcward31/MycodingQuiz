@@ -305,13 +305,14 @@ function saveScores(){
     }
 
     
-    var test = localStorage.getItem("highScores");
+    var test = localStorage.getItem("HighScores");
     console.log(test);
   
     var highscores = JSON.parse(test);
   
    console.log(highscores);
     
+   //var highscores = [];
   
     const player = {
         Initials: initial,
@@ -321,7 +322,7 @@ function saveScores(){
     //localStorage.setItem("highScore", player);//
   
    highscores.push(player);
-   localStorage.setItem("highScores", JSON.stringify(highscores));
+   localStorage.setItem("HighScores", JSON.stringify(highscores));
   
 };
 
@@ -348,9 +349,33 @@ hScorebtn.addEventListener("click", function(){
     q10Page.style.display = "none";
     lastPage.style.display = "none";
     highScoresPage.style.display ="block";
+    displayScores();
 });
 
+// changes static values to highscores
 
+function displayScores(){
+    var test = localStorage.getItem("HighScores");
+    console.log(test);
+  
+    var highScore = JSON.parse(test);
+  
+    highScore.sort(function(a,b) {
+        return a.Score - b.Score;
+    });
+  
+    
+     console.log(highScore);
+     
+     p1.innerHTML = JSON.stringify(highScore[highScore.length - 1]);
+     p2.innerHTML = JSON.stringify(highScore[highScore.length - 2]);
+     p3.innerHTML = JSON.stringify(highScore[highScore.length - 3]);
+     p4.innerHTML = JSON.stringify(highScore[highScore.length - 4]);
+     p5.innerHTML = JSON.stringify(highScore[highScore.length - 5]);
+  
+      
+    };
+  
 
 
 
