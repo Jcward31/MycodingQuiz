@@ -80,7 +80,6 @@ function updateCountdown() {
  };
 };
 
-/*END OF TIMER*/
 
 
 /*quiz pages*/ 
@@ -293,31 +292,81 @@ function endGame() {
     return;
 }
 
+
 /*saving your initials*/ 
 
 function saveScores(){
-    var initial = document.getElementById("yourInitials");
-
+    var initial = document.getElementById("yourInitials").value;
+    event.preventDefault();
+    console.log(initial);
     if (initial==""){
         alert ("You need to initial");
-    }else {
-        return;
-    }
+
     }
 
-    console.log(yourInitials);
+    
+    var test = localStorage.getItem("highScores");
+    console.log(test);
+  
+    var highscores = JSON.parse(test);
+  
+   console.log(highscores);
+    
+  
+    const player = {
+        Initials: initial,
+        Score: score
+    };
+
+    //localStorage.setItem("highScore", player);//
+  
+   highscores.push(player);
+   localStorage.setItem("highScores", JSON.stringify(highscores));
+  
+};
+
+/*eventlister for submit btn*/ 
+
+submitBt.onclick = saveScores;
 
 /*saving your highscores*/
 
-  var test = localStorage.getItem("highScore");
-
-  console.log(test);
-
-  var highScore = JSON.parse(test);
-
-  console.log(highScore);
   
-  const player = {
-      Initials: yourInitials,
-      Score: score
-  };
+ /*highscores button showing list*/ 
+hScorebtn.addEventListener("click", function(){
+   
+    startUpPage.style.display = "none";
+    q1Page.style.display = "none";
+    q2Page.style.display = "none";
+    q3Page.style.display = "none";
+    q4Page.style.display = "none";
+    q5Page.style.display = "none";
+    q6Page.style.display = "none";
+    q7Page.style.display = "none";
+    q8Page.style.display = "none";
+    q9Page.style.display = "none";
+    q10Page.style.display = "none";
+    lastPage.style.display = "none";
+    highScoresPage.style.display ="block";
+});
+
+
+
+
+
+finBut.addEventListener("click", function() {
+
+    startUpPage.style.display = "block";
+    q1Page.style.display = "none";
+    q2Page.style.display = "none";
+    q3Page.style.display = "none";
+    q4Page.style.display = "none";
+    q5Page.style.display = "none";
+    q6Page.style.display = "none";
+    q7Page.style.display = "none";
+    q8Page.style.display = "none";
+    q9Page.style.display = "none";
+    q10Page.style.display = "none";
+    lastPage.style.display = "none";
+    highScoresPage.style.display ="none";
+});
